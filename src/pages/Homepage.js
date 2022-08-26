@@ -15,7 +15,7 @@ const Homepage = () => {
 
   useEffect(() => {
     getAllActivities((result) => setActivity(result));
-  }, []);
+  });
 
   const renderCard = () => {
     return (activity.data || []).map((data, index) => {
@@ -40,7 +40,9 @@ const Homepage = () => {
       </div>
 
       {activity.total !== 0 ? (
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-10">{renderCard()}</div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
+          {renderCard()}
+        </div>
       ) : (
         <div className="flex justify-center mt-10 ">
           <Illustration />
