@@ -1,10 +1,13 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import ListItemPage from "../pages/ListItemPage";
-import Homepage from "../pages/Homepage";
-import AddActivityPage from "../pages/AddActivityPage";
-import EditActivityPage from "../pages/EditActivityPage";
-import AddTodoItemPage from "../pages/AddTodoItemPage";
+import {
+  ListItemPage,
+  Homepage,
+  AddActivityPage,
+  EditActivityPage,
+  AddTodoItemPage,
+  EditTodoPage,
+} from "../pages/";
 
 const MainRoute = () => {
   return (
@@ -21,12 +24,17 @@ const MainRoute = () => {
           element={<ListItemPage></ListItemPage>}
         ></Route>
         <Route
-          path="/editActivity/:id"
+          path="/editActivity/:id/:title"
           element={<EditActivityPage></EditActivityPage>}
         ></Route>
         <Route
-          path="/addItem"
+          path="/addItem/:id"
           element={<AddTodoItemPage></AddTodoItemPage>}
+        ></Route>
+
+        <Route
+          path="/editTodo/:groupId/:id"
+          element={<EditTodoPage></EditTodoPage>}
         ></Route>
       </Routes>
     </div>

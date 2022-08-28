@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Illustration from "../components/Illustration";
-import ActivityCard from "../components/ActivityCard";
 import { useNavigate } from "react-router-dom";
-import { getAllActivities } from "../fetch/activityFetch";
+import { Illustration, ActivityCard } from "../../components";
+import { getAllActivities } from "../../fetch/activityFetch";
 
 const Homepage = () => {
   const [activity, setActivity] = useState([]);
@@ -28,9 +27,9 @@ const Homepage = () => {
   };
 
   return (
-    <div className="container mx-auto px-12 md:px-64">
+    <div className="container mx-auto px-10 md:px-12 2xl:px-64">
       <div className="flex justify-between mt-12 mb-10">
-        <h1 className="text-3xl font-semibold ml-6">Activity</h1>
+        <h1 className="text-3xl font-semibold ml-1">Activity</h1>
         <button
           className="rounded-full bg-primary py-3 px-6 text-white hover:bg-blue-600"
           onClick={handleClick}

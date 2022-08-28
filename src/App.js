@@ -1,6 +1,6 @@
 import "./App.css";
 import MainRoute from "./routes/MainRoute";
-import Header from "./components/Header";
+import { Header } from "./components/";
 
 function App() {
   return (

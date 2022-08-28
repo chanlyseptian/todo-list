@@ -1,10 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <div className="header bg-primary p-6">
-      <div className="container mx-auto px-12 md:px-64">
+      <div className="container mx-auto px-6 md:px-12 2xl:px-64">
         <a href="/" className="text-white text-2xl font-semibold texet-centr">
           TODO LIST APP
         </a>

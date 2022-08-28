@@ -25,31 +25,29 @@ export const removeActivity = async (id) => {
       confirmButtonText: "Yes, delete it!",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        let result = await axios({
+        await axios({
           method: "DELETE",
           url: `https://todo.api.devcode.gethired.id/activity-groups/${id}`,
         });
 
-        Swal.fire("Deleted!", "Your file has been deleted.", "success");
+        Swal.fire("Deleted!", "Activity has been deleted.", "success");
       }
     });
 
-    console.log("delete success");
   } catch (error) {
     console.error(error);
   }
 };
 
 export const addActivity = async (data) => {
-  console.log(data);
   try {
-    let result = await axios({
+    await axios({
       method: "POST",
       url: "https://todo.api.devcode.gethired.id/activity-groups",
       data: data,
     });
 
-    Swal.fire("Add Brand", "Brand has been added", "success");
+    Swal.fire("Success", "Activity has been added", "success");
   } catch (e) {
     console.log(e);
   }
@@ -69,17 +67,13 @@ export const getOneActivity = async (id, cb) => {
 
 export const editActivity = async (id, data) => {
   try {
-    let result = await axios({
+    await axios({
       method: "PATCH",
       url: `https://todo.api.devcode.gethired.id/activity-groups/${id}`,
       data: data,
     });
 
-    Swal.fire(
-      "Edit brand " + id,
-      "brand " + id + " has been edited",
-      "success"
-    );
+    Swal.fire("Success ", "Title has been edited to " + data.title, "success");
   } catch (e) {
     console.log(e);
   }
